@@ -6,21 +6,10 @@
     <description>Recent content in Blog on Dashjay&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>6个树莓派实现的负载均衡</title>
-      <link>/blog/6/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/6/</guid>
-      <description>最近太忙了，之后再记录到底发生了什么吧，其实挺有意思的。
- 树莓派2b+ * 6(详细参数在下方)
-    部件 芯片     CPU主芯 BCM2835 （ARM11）   内存 512MB SDRAM @ 400MHz   GPU Broadcom VideoCore IV   网口 10/100Mbps    </description>
-    </item>
     
     <item>
       <title>Hello R Markdown</title>

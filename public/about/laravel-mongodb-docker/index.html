@@ -1,0 +1,1135 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "/"
+        },
+        "articleSection" : "about",
+        "name" : "Laravel使用MongoDB纯Docker化部署",
+        "headline" : "Laravel使用MongoDB纯Docker化部署",
+        "description" : " 使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
+ 在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  ",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-04-23 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2019-04-23 00:00:00 &#43;0000 UTC",
+        "url" : "/about/laravel-mongodb-docker/",
+        "wordCount" : "2",
+        "keywords" : [ "tutorial","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Laravel使用MongoDB纯Docker化部署</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.54.0" />
+        
+
+
+        
+            <meta name="author" content="Dashjay">
+        
+        
+            
+                <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Laravel使用MongoDB纯Docker化部署"/>
+<meta name="twitter:description" content=" 使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
+ 在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  "/>
+
+        <meta property="og:title" content="Laravel使用MongoDB纯Docker化部署" />
+<meta property="og:description" content=" 使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
+ 在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/about/laravel-mongodb-docker/" />
+<meta property="article:published_time" content="2019-04-23T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-23T00:00:00&#43;00:00"/>
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Laravel使用MongoDB纯Docker化部署">
+<meta itemprop="description" content=" 使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
+ 在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  ">
+
+
+<meta itemprop="datePublished" content="2019-04-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-04-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2">
+
+
+
+<meta itemprop="keywords" content="tutorial," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">about</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/itemized/">
+                            <i class="fa fa-list">&nbsp;</i>Itemized
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/itemized/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Itemized
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/about/laravel-mongodb-docker/">Laravel使用MongoDB纯Docker化部署</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-23'>
+                                    April 23, 2019</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/about/laravel-mongodb-docker/" class="image featured">
+            <img src="/blog/2019-04-23-laravel-mongodb-docker_files/%e5%b1%8f%e5%b9%95%e5%bf%ab%e7%85%a7%202019-04-23%20%e4%b8%8a%e5%8d%887.20.54.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/about/6/">6个树莓派实现的负载均衡</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-15'>
+                                    April 15, 2019</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/about/6/" class="image featured">
+            <img src="/blog/2019-04-15-6_files/IMG_5774.JPG" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fabout%2flaravel-mongodb-docker%2f&amp;text=Laravel%e4%bd%bf%e7%94%a8MongoDB%e7%ba%afDocker%e5%8c%96%e9%83%a8%e7%bd%b2&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fabout%2flaravel-mongodb-docker%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fabout%2flaravel-mongodb-docker%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fabout%2flaravel-mongodb-docker%2f&amp;title=Laravel%e4%bd%bf%e7%94%a8MongoDB%e7%ba%afDocker%e5%8c%96%e9%83%a8%e7%bd%b2" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fabout%2flaravel-mongodb-docker%2f&amp;title=Laravel%e4%bd%bf%e7%94%a8MongoDB%e7%ba%afDocker%e5%8c%96%e9%83%a8%e7%bd%b2" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fabout%2flaravel-mongodb-docker%2f&amp;title=Laravel%e4%bd%bf%e7%94%a8MongoDB%e7%ba%afDocker%e5%8c%96%e9%83%a8%e7%bd%b2" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fabout%2flaravel-mongodb-docker%2f&amp;description=Laravel%e4%bd%bf%e7%94%a8MongoDB%e7%ba%afDocker%e5%8c%96%e9%83%a8%e7%bd%b2" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Dashjay&amp;body=%2fabout%2flaravel-mongodb-docker%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/about/laravel-mongodb-docker/">Laravel使用MongoDB纯Docker化部署</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2019-04-23'>
+            April 23, 2019</time>
+        <span class="author">Dashjay</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fabout%2flaravel-mongodb-docker%2f&amp;text=Laravel%e4%bd%bf%e7%94%a8MongoDB%e7%ba%afDocker%e5%8c%96%e9%83%a8%e7%bd%b2&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fabout%2flaravel-mongodb-docker%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fabout%2flaravel-mongodb-docker%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fabout%2flaravel-mongodb-docker%2f&amp;title=Laravel%e4%bd%bf%e7%94%a8MongoDB%e7%ba%afDocker%e5%8c%96%e9%83%a8%e7%bd%b2" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fabout%2flaravel-mongodb-docker%2f&amp;title=Laravel%e4%bd%bf%e7%94%a8MongoDB%e7%ba%afDocker%e5%8c%96%e9%83%a8%e7%bd%b2" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fabout%2flaravel-mongodb-docker%2f&amp;title=Laravel%e4%bd%bf%e7%94%a8MongoDB%e7%ba%afDocker%e5%8c%96%e9%83%a8%e7%bd%b2" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fabout%2flaravel-mongodb-docker%2f&amp;description=Laravel%e4%bd%bf%e7%94%a8MongoDB%e7%ba%afDocker%e5%8c%96%e9%83%a8%e7%bd%b2" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Dashjay&amp;body=%2fabout%2flaravel-mongodb-docker%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+      </ul>
+    </section>
+  
+
+  
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/about/laravel-mongodb-docker/" class="image featured">
+            <img src="/blog/2019-04-23-laravel-mongodb-docker_files/%e5%b1%8f%e5%b9%95%e5%bf%ab%e7%85%a7%202019-04-23%20%e4%b8%8a%e5%8d%887.20.54.png" alt="">
+        </a>
+    
+
+
+  <div id="content">
+    
+
+<p>使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。</p>
+
+<blockquote>
+<h3 id="在php下使用laravel必须安装mongodb插件-然后mongodb-server必须运行-这次为了方便软件使用-我使用了纯docker部署-也是为了方便拓展">在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。</h3>
+</blockquote>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4">运维</a></li>
+                
+                
+                <li><a class="article-category-link" href="/categories/docker">Docker</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/tutorial">tutorial</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/about/6/"
+                class="button big previous">6个树莓派实现的负载均衡</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/main/logo.png" alt="Dashjay&#39;s avatar" /></a>
+      
+    
+    
+      <header>
+        <h2>Dashjay&#39;s</h2>
+        <p>Dash 被翻译成冲刺，希望我能在快速的生活里留下一些自己的痕迹，给未来的自己。 <i class='fa fa-hand-peace-o'></i></p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+        
+  <li><a href="//github.com/dashjay" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="weixin://contacts/profile/zhaofang0903" target="_blank" title="WeChat" class="fa fa-weixin"></a></li>
+
+
+
+  <li><a href="//wpa.qq.com/msgrd?v=3&amp;uin=149907716&amp;site=qq&amp;menu=yes" target="_blank" title="QQ" class="fa fa-qq"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:dashjay@foxmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/about/laravel-mongodb-docker/">Laravel使用MongoDB纯Docker化部署</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-23'>
+                April 23, 2019
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/about/laravel-mongodb-docker/" class="image featured">
+            <img src="/blog/2019-04-23-laravel-mongodb-docker_files/%e5%b1%8f%e5%b9%95%e5%bf%ab%e7%85%a7%202019-04-23%20%e4%b8%8a%e5%8d%887.20.54.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/about/6/">6个树莓派实现的负载均衡</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-15'>
+                April 15, 2019
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/about/6/" class="image featured">
+            <img src="/blog/2019-04-15-6_files/IMG_5774.JPG" alt="">
+        </a>
+    
+
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                Uncategorized
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hugo/">Hugo</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/%E8%BF%90%E7%BB%B4/">运维</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/docker/">Docker</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/go/">Go</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/jekyll/">Jekyll</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/r/">R</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>偶尔会花时间记录一下自己的日常，主要也是给自己看的，记录一下自己的生平</p>
+      <a href="/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+        
+  <li><a href="//github.com/dashjay" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="weixin://contacts/profile/zhaofang0903" target="_blank" title="WeChat" class="fa fa-weixin"></a></li>
+
+
+
+  <li><a href="//wpa.qq.com/msgrd?v=3&amp;uin=149907716&amp;site=qq&amp;menu=yes" target="_blank" title="QQ" class="fa fa-qq"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:dashjay@foxmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2019
+        
+          Dashjay&#39;s
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

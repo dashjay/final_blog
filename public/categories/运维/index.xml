@@ -6,17 +6,32 @@
     <description>Recent content in 运维 on Dashjay&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/%E8%BF%90%E7%BB%B4/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Laravel使用MongoDB纯Docker化部署</title>
+      <link>/laravel-mongodb-docker/</link>
+      <pubDate>Tue, 23 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/laravel-mongodb-docker/</guid>
+      <description>使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
+ 在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  首先拉到一个非常好的Docker，已经配置的非常好了~可以直接使用那种！&amp;ndash;&amp;gt;webdevops/php-nginx
+$docker pull webdevops/php-nginx $docker run -d -p 32778:80 -p 32777:443 -p 32776:9000 webdevops/php-nginx supervisord  不出意外此时你访问localhost:32778的时候可以看到nginx404了，那是因为网页没有index 这时候你运行docker ps -a 检查一下刚才运行的docker的名字
+$docker ps -a CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES a969d60ac6ea webdevops/php-nginx &amp;quot;/entrypoint supervi…&amp;quot; 8 minutes ago Up 8 minutes 0.0.0.0:32778-&amp;gt;80/tcp, 0.0.0.0:32777-&amp;gt;443/tcp, 0.0.0.0:32776-&amp;gt;9000/tcp fervent_hofstadter  其中docker的id是这个a969d60ac6ea
+然后使用docker exec来执行命令进入docker
+docker exec -it a969d60ac6ea bash  我们既不会影响原来的程序supervisord的运行，还能进入现有docker
+$ls 1 bin boot dev etc home lib lib64 media mnt opt proc root run sbin srv sys tmp usr var  查看一下有哪些目录，整个目录是映射在app里的，所以我们进入app</description>
+    </item>
+    
+    <item>
       <title>6个树莓派实现的负载均衡</title>
-      <link>/blog/6/</link>
+      <link>/6/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/6/</guid>
+      <guid>/6/</guid>
       <description>最近太忙了，之后再记录到底发生了什么吧，其实挺有意思的。
  树莓派2b+ * 6(详细参数在下方)
     部件 芯片     CPU主芯 BCM2835 （ARM11）   内存 512MB SDRAM @ 400MHz   GPU Broadcom VideoCore IV   网口 10/100Mbps    </description>
