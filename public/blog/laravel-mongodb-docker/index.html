@@ -13,8 +13,13 @@
         "articleSection" : "blog",
         "name" : "Laravel使用MongoDB纯Docker化部署",
         "headline" : "Laravel使用MongoDB纯Docker化部署",
-        "description" : " 使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
- 在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  ",
+        "description" : "使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
+ 在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  首先拉到一个非常好的Docker，已经配置的非常好了~可以直接使用那种！&ndash;&gt;webdevops/php-nginx
+$docker pull webdevops/php-nginx $docker run -d -p 32778:80 -p 32777:443 -p 32776:9000 webdevops/php-nginx supervisord  不出意外此时你访问localhost:32778的时候可以看到nginx404了，那是因为网页没有index 这时候你运行docker ps -a 检查一下刚才运行的docker的名字
+$docker ps -a CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES a969d60ac6ea webdevops/php-nginx &quot;/entrypoint supervi…&quot; 8 minutes ago Up 8 minutes 0.0.0.0:32778-&gt;80/tcp, 0.0.0.0:32777-&gt;443/tcp, 0.0.0.0:32776-&gt;9000/tcp fervent_hofstadter  其中docker的id是这个a969d60ac6ea
+然后使用docker exec来执行命令进入docker
+docker exec -it a969d60ac6ea bash  我们既不会影响原来的程序supervisord的运行，还能进入现有docker
+$ls 1 bin boot dev etc home lib lib64 media mnt opt proc root run sbin srv sys tmp usr var  查看一下有哪些目录，整个目录是映射在app里的，所以我们进入app",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -25,7 +30,7 @@
         "datePublished": "2019-04-23 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-04-23 00:00:00 &#43;0000 UTC",
         "url" : "/blog/laravel-mongodb-docker/",
-        "wordCount" : "2",
+        "wordCount" : "91",
         "keywords" : [ "tutorial","Blog" ]
     }
     </script>
@@ -52,12 +57,22 @@
 
         <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Laravel使用MongoDB纯Docker化部署"/>
-<meta name="twitter:description" content=" 使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
- 在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  "/>
+<meta name="twitter:description" content="使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
+ 在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  首先拉到一个非常好的Docker，已经配置的非常好了~可以直接使用那种！&ndash;&gt;webdevops/php-nginx
+$docker pull webdevops/php-nginx $docker run -d -p 32778:80 -p 32777:443 -p 32776:9000 webdevops/php-nginx supervisord  不出意外此时你访问localhost:32778的时候可以看到nginx404了，那是因为网页没有index 这时候你运行docker ps -a 检查一下刚才运行的docker的名字
+$docker ps -a CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES a969d60ac6ea webdevops/php-nginx &quot;/entrypoint supervi…&quot; 8 minutes ago Up 8 minutes 0.0.0.0:32778-&gt;80/tcp, 0.0.0.0:32777-&gt;443/tcp, 0.0.0.0:32776-&gt;9000/tcp fervent_hofstadter  其中docker的id是这个a969d60ac6ea
+然后使用docker exec来执行命令进入docker
+docker exec -it a969d60ac6ea bash  我们既不会影响原来的程序supervisord的运行，还能进入现有docker
+$ls 1 bin boot dev etc home lib lib64 media mnt opt proc root run sbin srv sys tmp usr var  查看一下有哪些目录，整个目录是映射在app里的，所以我们进入app"/>
 
         <meta property="og:title" content="Laravel使用MongoDB纯Docker化部署" />
-<meta property="og:description" content=" 使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
- 在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  " />
+<meta property="og:description" content="使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
+ 在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  首先拉到一个非常好的Docker，已经配置的非常好了~可以直接使用那种！&ndash;&gt;webdevops/php-nginx
+$docker pull webdevops/php-nginx $docker run -d -p 32778:80 -p 32777:443 -p 32776:9000 webdevops/php-nginx supervisord  不出意外此时你访问localhost:32778的时候可以看到nginx404了，那是因为网页没有index 这时候你运行docker ps -a 检查一下刚才运行的docker的名字
+$docker ps -a CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES a969d60ac6ea webdevops/php-nginx &quot;/entrypoint supervi…&quot; 8 minutes ago Up 8 minutes 0.0.0.0:32778-&gt;80/tcp, 0.0.0.0:32777-&gt;443/tcp, 0.0.0.0:32776-&gt;9000/tcp fervent_hofstadter  其中docker的id是这个a969d60ac6ea
+然后使用docker exec来执行命令进入docker
+docker exec -it a969d60ac6ea bash  我们既不会影响原来的程序supervisord的运行，还能进入现有docker
+$ls 1 bin boot dev etc home lib lib64 media mnt opt proc root run sbin srv sys tmp usr var  查看一下有哪些目录，整个目录是映射在app里的，所以我们进入app" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/laravel-mongodb-docker/" />
 <meta property="article:published_time" content="2019-04-23T00:00:00&#43;00:00"/>
@@ -69,13 +84,18 @@
         <meta property="og:image:height" content="512">
         
 <meta itemprop="name" content="Laravel使用MongoDB纯Docker化部署">
-<meta itemprop="description" content=" 使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
- 在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  ">
+<meta itemprop="description" content="使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
+ 在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  首先拉到一个非常好的Docker，已经配置的非常好了~可以直接使用那种！&ndash;&gt;webdevops/php-nginx
+$docker pull webdevops/php-nginx $docker run -d -p 32778:80 -p 32777:443 -p 32776:9000 webdevops/php-nginx supervisord  不出意外此时你访问localhost:32778的时候可以看到nginx404了，那是因为网页没有index 这时候你运行docker ps -a 检查一下刚才运行的docker的名字
+$docker ps -a CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES a969d60ac6ea webdevops/php-nginx &quot;/entrypoint supervi…&quot; 8 minutes ago Up 8 minutes 0.0.0.0:32778-&gt;80/tcp, 0.0.0.0:32777-&gt;443/tcp, 0.0.0.0:32776-&gt;9000/tcp fervent_hofstadter  其中docker的id是这个a969d60ac6ea
+然后使用docker exec来执行命令进入docker
+docker exec -it a969d60ac6ea bash  我们既不会影响原来的程序supervisord的运行，还能进入现有docker
+$ls 1 bin boot dev etc home lib lib64 media mnt opt proc root run sbin srv sys tmp usr var  查看一下有哪些目录，整个目录是映射在app里的，所以我们进入app">
 
 
 <meta itemprop="datePublished" content="2019-04-23T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-23T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2">
+<meta itemprop="wordCount" content="91">
 
 
 
@@ -137,6 +157,12 @@
                 <li>
                     <a href="/about/">
                             <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
                     </a>
                 </li>
             
@@ -213,6 +239,14 @@
                     </li>
                 
                     <li>
+                        <a href="/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
                         <a href="/itemized/">
                             <h3>
                                 <i class="fa fa-list">&nbsp;</i>Itemized
@@ -254,6 +288,18 @@
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/verilog-oj/">一个项目的梳理Verilog_OJ</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-26'>
+                                    April 26, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/laravel-mongodb-docker/">Laravel使用MongoDB纯Docker化部署</a></h3>
                                 
                                 <time class="published" datetime=
@@ -282,42 +328,6 @@
 
         <a href="/blog/laravel-mongodb-docker/" class="image featured">
             <img src="/blog/2019-04-23-laravel-mongodb-docker_files/%e5%b1%8f%e5%b9%95%e5%bf%ab%e7%85%a7%202019-04-23%20%e4%b8%8a%e5%8d%887.20.54.png" alt="">
-        </a>
-    
-
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/6/">6个树莓派实现的负载均衡</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2019-04-15'>
-                                    April 15, 2019</time>
-                            </header>
-                            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/blog/6/" class="image featured">
-            <img src="/blog/2019-04-15-6_files/IMG_5774.JPG" alt="">
         </a>
     
 
@@ -585,6 +595,59 @@
 <h3 id="在php下使用laravel必须安装mongodb插件-然后mongodb-server必须运行-这次为了方便软件使用-我使用了纯docker部署-也是为了方便拓展">在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。</h3>
 </blockquote>
 
+<p>首先拉到一个非常好的Docker，已经配置的非常好了~可以直接使用那种！&ndash;&gt;<code>webdevops/php-nginx</code></p>
+
+<pre><code>$docker pull  webdevops/php-nginx
+
+$docker run -d -p 32778:80 -p 32777:443 -p 32776:9000 webdevops/php-nginx supervisord
+
+</code></pre>
+
+<p>不出意外此时你访问localhost:32778的时候可以看到nginx404了，那是因为网页没有index
+<img src="/./2019-04-23-laravel-mongodb-docker_files/屏幕快照 2019-04-23 下午1.15.09.png" alt="" width="60%"/></p>
+
+<p>这时候你运行docker ps -a 检查一下刚才运行的docker的名字</p>
+
+<pre><code>$docker ps -a 
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS              PORTS                                                                    NAMES
+a969d60ac6ea        webdevops/php-nginx   &quot;/entrypoint supervi…&quot;   8 minutes ago       Up 8 minutes        0.0.0.0:32778-&gt;80/tcp, 0.0.0.0:32777-&gt;443/tcp, 0.0.0.0:32776-&gt;9000/tcp   fervent_hofstadter
+
+</code></pre>
+
+<p>其中docker的id是这个<code>a969d60ac6ea</code></p>
+
+<p>然后使用docker exec来执行命令进入docker</p>
+
+<pre><code>docker exec -it a969d60ac6ea bash
+</code></pre>
+
+<p>我们既不会影响原来的程序supervisord的运行，还能进入现有docker</p>
+
+<pre><code>$ls
+1  bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+
+</code></pre>
+
+<p>查看一下有哪些目录，整个目录是映射在app里的，所以我们进入app</p>
+
+<pre><code>$cd app
+$vim index.php
+</code></pre>
+
+<pre><code>## $cat  index.php
+&lt;?php
+phpinfo()
+?&gt;
+</code></pre>
+
+<p>文件里面就写那么多！</p>
+
+<p><img src="/./2019-04-23-laravel-mongodb-docker_files/屏幕快照 2019-04-23 下午4.31.16.png" alt="" width="60%"/></p>
+
+<p>直接访问开始设置的端口就可以访问到内容！</p>
+
+<p>这个webdevops/php-nginx是不是太好用了，配置文件在深处自己找，可以改目录或者你自己把你的目录映射进去即可。</p>
+
   </div>
 
   <footer>
@@ -656,6 +719,9 @@
                 class="button big previous">6个树莓派实现的负载均衡</a></li>
     
 
+    
+        <li><a href="/blog/verilog-oj/"
+                class="button big next">一个项目的梳理Verilog_OJ</a></li>
     
 </ul>
 
@@ -788,6 +854,20 @@
           <article class="mini-post">
             <header>
               <h3>
+                <a href="/blog/verilog-oj/">一个项目的梳理Verilog_OJ</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-26'>
+                April 26, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="/blog/laravel-mongodb-docker/">Laravel使用MongoDB纯Docker化部署</a>
               </h3>
               
@@ -817,44 +897,6 @@
 
         <a href="/blog/laravel-mongodb-docker/" class="image featured">
             <img src="/blog/2019-04-23-laravel-mongodb-docker_files/%e5%b1%8f%e5%b9%95%e5%bf%ab%e7%85%a7%202019-04-23%20%e4%b8%8a%e5%8d%887.20.54.png" alt="">
-        </a>
-    
-
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/blog/6/">6个树莓派实现的负载均衡</a>
-              </h3>
-              
-              <time class="published" datetime='2019-04-15'>
-                April 15, 2019
-              </time>
-            </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/blog/6/" class="image featured">
-            <img src="/blog/2019-04-15-6_files/IMG_5774.JPG" alt="">
         </a>
     
 
@@ -960,6 +1002,17 @@
             <header>
               
                 <a href="/categories/r/">R</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a>
                 <span style="float:right;">1</span>
               
             </header>

@@ -13,10 +13,10 @@
     
     <item>
       <title>Laravel使用MongoDB纯Docker化部署</title>
-      <link>/laravel-mongodb-docker/</link>
+      <link>/blog/laravel-mongodb-docker/</link>
       <pubDate>Tue, 23 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/laravel-mongodb-docker/</guid>
+      <guid>/blog/laravel-mongodb-docker/</guid>
       <description>使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
  在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  首先拉到一个非常好的Docker，已经配置的非常好了~可以直接使用那种！&amp;ndash;&amp;gt;webdevops/php-nginx
 $docker pull webdevops/php-nginx $docker run -d -p 32778:80 -p 32777:443 -p 32776:9000 webdevops/php-nginx supervisord  不出意外此时你访问localhost:32778的时候可以看到nginx404了，那是因为网页没有index 这时候你运行docker ps -a 检查一下刚才运行的docker的名字

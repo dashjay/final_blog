@@ -6,17 +6,37 @@
     <description>Recent content on Dashjay&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>一个项目的梳理Verilog_OJ</title>
+      <link>/blog/verilog-oj/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/verilog-oj/</guid>
+      <description>1. 项目诞生 (2018 12 13) 何老师发了几个链接，然后我们就开始设计这个网站了
+https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.techep.csi.cuny.edu/~zhangs/v.html https://github.com/timyang2010/VerilogOnlineJudge  第一周的计划让我们激动 雪松学长的加入 开会的时候鲁一洋做的记录 需求文档0.2哦 需求文档下载链接 1-10开会整理 1-10开会整理 3-22我们创建并且使用了Teambition
+遇到了多伦多大学网站
+国防科技大学网站
+&amp;hellip;我没有每天写日记的习惯，这次项目让我成长了不少，但是也让我感受到了心有余而力不足的感觉,项目开发和版本迭代并没有想象中的那么容易，那么干净利落，要准备的东西太多了。
+ 我现在开始整理并且把制作这个项目的过程做成册来记录我的成长过程
+ 1.项目初期开发使用PHP_Laravel一个简单干净的框架，当初为了把Vue嵌入进Laravel也花了不少时间那还是第一个版本（现在代码都不知道放在哪里了，非常难受）
+2.项目第二版本是当我准备去参加计算机设计大赛的时候，重新对整个项目重构，还是使用了PHP_Laravel + vue来实现，数据库我都没换，但是我换了一个前端框架，之前使用的Element-UI被我换成了额Iview，我自己感觉重构了一个版本，但是其实并没有实质内容的变化，只不过后台调用了Verilog而已。
+3.第三个版本是为了市赛准备的版本，数据库换成了额MongoDB，纯Docker化部署，PHP为核心，代码已经非常成熟了，然后使用Flask(python)给后台提供了便捷的评测API,只要文件储存的路径对了就可以了。
+4.第四个版本是未来的版本，推测这个项目只会有五个版本，那么作为第倒数第二个版本，基础逻辑（除了评测之外的逻辑）使用PHP开发，数据库使用MongoDB，然后在评测部分使用FLask来编程，整个项目Docker化部署。以上说的是OJ这边，除此之外，在线模板开发的这个项目可以搞起来。
+ 根据老师的设想 案例：电梯： 状态机 -&amp;gt; 代码编写 -&amp;gt; 在线板级验证
+ 总共网站要集成这几个功能，第一个是画状态机。 第二个是代码编写： 第三个上板验证还是一块蓝图： 5.版本不设计，只对代码进行逻辑的链接，（设想）。</description>
+    </item>
+    
+    <item>
       <title>Laravel使用MongoDB纯Docker化部署</title>
-      <link>/laravel-mongodb-docker/</link>
+      <link>/blog/laravel-mongodb-docker/</link>
       <pubDate>Tue, 23 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/laravel-mongodb-docker/</guid>
+      <guid>/blog/laravel-mongodb-docker/</guid>
       <description>使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
  在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  首先拉到一个非常好的Docker，已经配置的非常好了~可以直接使用那种！&amp;ndash;&amp;gt;webdevops/php-nginx
 $docker pull webdevops/php-nginx $docker run -d -p 32778:80 -p 32777:443 -p 32776:9000 webdevops/php-nginx supervisord  不出意外此时你访问localhost:32778的时候可以看到nginx404了，那是因为网页没有index 这时候你运行docker ps -a 检查一下刚才运行的docker的名字
@@ -28,10 +48,10 @@ $ls 1 bin boot dev etc home lib lib64 media mnt opt proc root run sbin srv sys t
     
     <item>
       <title>6个树莓派实现的负载均衡</title>
-      <link>/6/</link>
+      <link>/blog/6/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/6/</guid>
+      <guid>/blog/6/</guid>
       <description>最近太忙了，之后再记录到底发生了什么吧，其实挺有意思的。
  树莓派2b+ * 6(详细参数在下方)
     部件 芯片     CPU主芯 BCM2835 （ARM11）   内存 512MB SDRAM @ 400MHz   GPU Broadcom VideoCore IV   网口 10/100Mbps    </description>
