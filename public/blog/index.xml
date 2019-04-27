@@ -6,10 +6,24 @@
     <description>Recent content in Blog on Dashjay&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>二进制玩出花来(表示和运算)</title>
+      <link>/blog/bin/</link>
+      <pubDate>Sat, 27 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/bin/</guid>
+      <description>二进制运算 要计算
+$$A = (0.1011)_2 \ B = (-0.0101)_2 $$ 求 A+B(使用补码)
+$$A_补 = 0.1011$$ ,$$B_补 = 1.1011$$
+   加法 0.1011     + 1.1011   = 10.0110    其中结果 为 $$[A+B]_补$$ 并且要把符号位的进位去除表示为
+$$[A+B]_补 = 0.0110 = A_补 + B_补$$
+其中$$(0.0110)_补 = 0.0110$$</description>
+    </item>
     
     <item>
       <title>一个项目的梳理Verilog_OJ</title>

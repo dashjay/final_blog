@@ -11,11 +11,14 @@
              "@id": "/"
         },
         "articleSection" : "blog",
-        "name" : "6个树莓派实现的负载均衡",
-        "headline" : "6个树莓派实现的负载均衡",
-        "description" : "最近太忙了，之后再记录到底发生了什么吧，其实挺有意思的。
- 树莓派2b+ * 6(详细参数在下方)
-    部件 芯片     CPU主芯 BCM2835 （ARM11）   内存 512MB SDRAM @ 400MHz   GPU Broadcom VideoCore IV   网口 10/100Mbps    ",
+        "name" : "二进制玩出花来(表示和运算)",
+        "headline" : "二进制玩出花来(表示和运算)",
+        "description" : "二进制运算 要计算
+$$A = (0.1011)_2 \ B = (-0.0101)_2 $$ 求 A+B(使用补码)
+$$A_补 = 0.1011$$ ,$$B_补 = 1.1011$$
+   加法 0.1011     + 1.1011   = 10.0110    其中结果 为 $$[A+B]_补$$ 并且要把符号位的进位去除表示为
+$$[A+B]_补 = 0.0110 = A_补 + B_补$$
+其中$$(0.0110)_补 = 0.0110$$",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -23,16 +26,16 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-04-15 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2019-04-15 00:00:00 &#43;0000 UTC",
-        "url" : "/blog/6/",
-        "wordCount" : "20",
-        "keywords" : [ "树莓派","Blog" ]
+        "datePublished": "2019-04-27 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2019-04-27 00:00:00 &#43;0000 UTC",
+        "url" : "/blog/bin/",
+        "wordCount" : "38",
+        "keywords" : [ "Blog" ]
     }
     </script>
         
             
-                <title>6个树莓派实现的负载均衡</title>
+                <title>二进制玩出花来(表示和运算)</title>
             
         
 
@@ -52,38 +55,47 @@
         
 
         <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="6个树莓派实现的负载均衡"/>
-<meta name="twitter:description" content="最近太忙了，之后再记录到底发生了什么吧，其实挺有意思的。
- 树莓派2b&#43; * 6(详细参数在下方)
-    部件 芯片     CPU主芯 BCM2835 （ARM11）   内存 512MB SDRAM @ 400MHz   GPU Broadcom VideoCore IV   网口 10/100Mbps    "/>
+<meta name="twitter:title" content="二进制玩出花来(表示和运算)"/>
+<meta name="twitter:description" content="二进制运算 要计算
+$$A = (0.1011)_2 \ B = (-0.0101)_2 $$ 求 A&#43;B(使用补码)
+$$A_补 = 0.1011$$ ,$$B_补 = 1.1011$$
+   加法 0.1011     &#43; 1.1011   = 10.0110    其中结果 为 $$[A&#43;B]_补$$ 并且要把符号位的进位去除表示为
+$$[A&#43;B]_补 = 0.0110 = A_补 &#43; B_补$$
+其中$$(0.0110)_补 = 0.0110$$"/>
 
-        <meta property="og:title" content="6个树莓派实现的负载均衡" />
-<meta property="og:description" content="最近太忙了，之后再记录到底发生了什么吧，其实挺有意思的。
- 树莓派2b&#43; * 6(详细参数在下方)
-    部件 芯片     CPU主芯 BCM2835 （ARM11）   内存 512MB SDRAM @ 400MHz   GPU Broadcom VideoCore IV   网口 10/100Mbps    " />
+        <meta property="og:title" content="二进制玩出花来(表示和运算)" />
+<meta property="og:description" content="二进制运算 要计算
+$$A = (0.1011)_2 \ B = (-0.0101)_2 $$ 求 A&#43;B(使用补码)
+$$A_补 = 0.1011$$ ,$$B_补 = 1.1011$$
+   加法 0.1011     &#43; 1.1011   = 10.0110    其中结果 为 $$[A&#43;B]_补$$ 并且要把符号位的进位去除表示为
+$$[A&#43;B]_补 = 0.0110 = A_补 &#43; B_补$$
+其中$$(0.0110)_补 = 0.0110$$" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/6/" />
-<meta property="article:published_time" content="2019-04-15T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-15T00:00:00&#43;00:00"/>
+<meta property="og:url" content="/blog/bin/" />
+<meta property="article:published_time" content="2019-04-27T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-27T00:00:00&#43;00:00"/>
 
         <meta property="og:image" content="//images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
         
-<meta itemprop="name" content="6个树莓派实现的负载均衡">
-<meta itemprop="description" content="最近太忙了，之后再记录到底发生了什么吧，其实挺有意思的。
- 树莓派2b&#43; * 6(详细参数在下方)
-    部件 芯片     CPU主芯 BCM2835 （ARM11）   内存 512MB SDRAM @ 400MHz   GPU Broadcom VideoCore IV   网口 10/100Mbps    ">
+<meta itemprop="name" content="二进制玩出花来(表示和运算)">
+<meta itemprop="description" content="二进制运算 要计算
+$$A = (0.1011)_2 \ B = (-0.0101)_2 $$ 求 A&#43;B(使用补码)
+$$A_补 = 0.1011$$ ,$$B_补 = 1.1011$$
+   加法 0.1011     &#43; 1.1011   = 10.0110    其中结果 为 $$[A&#43;B]_补$$ 并且要把符号位的进位去除表示为
+$$[A&#43;B]_补 = 0.0110 = A_补 &#43; B_补$$
+其中$$(0.0110)_补 = 0.0110$$">
 
 
-<meta itemprop="datePublished" content="2019-04-15T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-04-15T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="20">
+<meta itemprop="datePublished" content="2019-04-27T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-04-27T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="38">
 
 
 
-<meta itemprop="keywords" content="树莓派," />
+<meta itemprop="keywords" content="" />
 
         
 
@@ -320,7 +332,7 @@
 
 
 <li>
-  <a href="//twitter.com/share?url=%2fblog%2f6%2f&amp;text=6%e4%b8%aa%e6%a0%91%e8%8e%93%e6%b4%be%e5%ae%9e%e7%8e%b0%e7%9a%84%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1&amp;via=" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=%2fblog%2fbin%2f&amp;text=%e4%ba%8c%e8%bf%9b%e5%88%b6%e7%8e%a9%e5%87%ba%e8%8a%b1%e6%9d%a5%28%e8%a1%a8%e7%a4%ba%e5%92%8c%e8%bf%90%e7%ae%97%29&amp;via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -330,7 +342,7 @@
 
 
 <li>
-  <a href="//plus.google.com/share?url=%2fblog%2f6%2f" target="_blank" class="share-btn google-plus">
+  <a href="//plus.google.com/share?url=%2fblog%2fbin%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
   </a>
@@ -341,7 +353,7 @@
 
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2f6%2f" target="_blank" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fbin%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -351,7 +363,7 @@
 
 
 <li>
-  <a href="//reddit.com/submit?url=%2fblog%2f6%2f&amp;title=6%e4%b8%aa%e6%a0%91%e8%8e%93%e6%b4%be%e5%ae%9e%e7%8e%b0%e7%9a%84%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" target="_blank" class="share-btn reddit">
+  <a href="//reddit.com/submit?url=%2fblog%2fbin%2f&amp;title=%e4%ba%8c%e8%bf%9b%e5%88%b6%e7%8e%a9%e5%87%ba%e8%8a%b1%e6%9d%a5%28%e8%a1%a8%e7%a4%ba%e5%92%8c%e8%bf%90%e7%ae%97%29" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
   </a>
@@ -361,7 +373,7 @@
 
 
 <li>
-  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2f6%2f&amp;title=6%e4%b8%aa%e6%a0%91%e8%8e%93%e6%b4%be%e5%ae%9e%e7%8e%b0%e7%9a%84%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" target="_blank" class="share-btn linkedin">
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fbin%2f&amp;title=%e4%ba%8c%e8%bf%9b%e5%88%b6%e7%8e%a9%e5%87%ba%e8%8a%b1%e6%9d%a5%28%e8%a1%a8%e7%a4%ba%e5%92%8c%e8%bf%90%e7%ae%97%29" target="_blank" class="share-btn linkedin">
       <i class="fa fa-linkedin"></i>
       <p>LinkedIn</p>
     </a>
@@ -371,7 +383,7 @@
 
 
 <li>
-  <a href="//www.stumbleupon.com/submit?url=%2fblog%2f6%2f&amp;title=6%e4%b8%aa%e6%a0%91%e8%8e%93%e6%b4%be%e5%ae%9e%e7%8e%b0%e7%9a%84%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" target="_blank" class="share-btn stumbleupon">
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fbin%2f&amp;title=%e4%ba%8c%e8%bf%9b%e5%88%b6%e7%8e%a9%e5%87%ba%e8%8a%b1%e6%9d%a5%28%e8%a1%a8%e7%a4%ba%e5%92%8c%e8%bf%90%e7%ae%97%29" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
   </a>
@@ -381,7 +393,7 @@
 
 
 <li>
-  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2f6%2f&amp;description=6%e4%b8%aa%e6%a0%91%e8%8e%93%e6%b4%be%e5%ae%9e%e7%8e%b0%e7%9a%84%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" target="_blank" class="share-btn pinterest">
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fbin%2f&amp;description=%e4%ba%8c%e8%bf%9b%e5%88%b6%e7%8e%a9%e5%87%ba%e8%8a%b1%e6%9d%a5%28%e8%a1%a8%e7%a4%ba%e5%92%8c%e8%bf%90%e7%ae%97%29" target="_blank" class="share-btn pinterest">
     <i class="fa fa-pinterest-p"></i>
     <p>Pinterest</p>
   </a>
@@ -391,7 +403,7 @@
 
 
 <li>
-  <a href="mailto:?subject=Check out this post by Dashjay&amp;body=%2fblog%2f6%2f" target="_blank" class="share-btn email">
+  <a href="mailto:?subject=Check out this post by Dashjay&amp;body=%2fblog%2fbin%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
   </a>
@@ -410,7 +422,7 @@
   <header>
     <div class="title">
         
-            <h1><a href="/blog/6/">6个树莓派实现的负载均衡</a></h1>
+            <h1><a href="/blog/bin/">二进制玩出花来(表示和运算)</a></h1>
             
         
         
@@ -419,8 +431,8 @@
         
 
         <time class="published"
-            datetime='2019-04-15'>
-            April 15, 2019</time>
+            datetime='2019-04-27'>
+            April 27, 2019</time>
         <span class="author">Dashjay</span>
         
             <p>1 minute read</p>
@@ -438,7 +450,7 @@
 
 
 <li>
-  <a href="//twitter.com/share?url=%2fblog%2f6%2f&amp;text=6%e4%b8%aa%e6%a0%91%e8%8e%93%e6%b4%be%e5%ae%9e%e7%8e%b0%e7%9a%84%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1&amp;via=" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=%2fblog%2fbin%2f&amp;text=%e4%ba%8c%e8%bf%9b%e5%88%b6%e7%8e%a9%e5%87%ba%e8%8a%b1%e6%9d%a5%28%e8%a1%a8%e7%a4%ba%e5%92%8c%e8%bf%90%e7%ae%97%29&amp;via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -448,7 +460,7 @@
 
 
 <li>
-  <a href="//plus.google.com/share?url=%2fblog%2f6%2f" target="_blank" class="share-btn google-plus">
+  <a href="//plus.google.com/share?url=%2fblog%2fbin%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
   </a>
@@ -459,7 +471,7 @@
 
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2f6%2f" target="_blank" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fbin%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -469,7 +481,7 @@
 
 
 <li>
-  <a href="//reddit.com/submit?url=%2fblog%2f6%2f&amp;title=6%e4%b8%aa%e6%a0%91%e8%8e%93%e6%b4%be%e5%ae%9e%e7%8e%b0%e7%9a%84%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" target="_blank" class="share-btn reddit">
+  <a href="//reddit.com/submit?url=%2fblog%2fbin%2f&amp;title=%e4%ba%8c%e8%bf%9b%e5%88%b6%e7%8e%a9%e5%87%ba%e8%8a%b1%e6%9d%a5%28%e8%a1%a8%e7%a4%ba%e5%92%8c%e8%bf%90%e7%ae%97%29" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
   </a>
@@ -479,7 +491,7 @@
 
 
 <li>
-  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2f6%2f&amp;title=6%e4%b8%aa%e6%a0%91%e8%8e%93%e6%b4%be%e5%ae%9e%e7%8e%b0%e7%9a%84%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" target="_blank" class="share-btn linkedin">
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fbin%2f&amp;title=%e4%ba%8c%e8%bf%9b%e5%88%b6%e7%8e%a9%e5%87%ba%e8%8a%b1%e6%9d%a5%28%e8%a1%a8%e7%a4%ba%e5%92%8c%e8%bf%90%e7%ae%97%29" target="_blank" class="share-btn linkedin">
       <i class="fa fa-linkedin"></i>
       <p>LinkedIn</p>
     </a>
@@ -489,7 +501,7 @@
 
 
 <li>
-  <a href="//www.stumbleupon.com/submit?url=%2fblog%2f6%2f&amp;title=6%e4%b8%aa%e6%a0%91%e8%8e%93%e6%b4%be%e5%ae%9e%e7%8e%b0%e7%9a%84%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" target="_blank" class="share-btn stumbleupon">
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fbin%2f&amp;title=%e4%ba%8c%e8%bf%9b%e5%88%b6%e7%8e%a9%e5%87%ba%e8%8a%b1%e6%9d%a5%28%e8%a1%a8%e7%a4%ba%e5%92%8c%e8%bf%90%e7%ae%97%29" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
   </a>
@@ -499,7 +511,7 @@
 
 
 <li>
-  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2f6%2f&amp;description=6%e4%b8%aa%e6%a0%91%e8%8e%93%e6%b4%be%e5%ae%9e%e7%8e%b0%e7%9a%84%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" target="_blank" class="share-btn pinterest">
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fbin%2f&amp;description=%e4%ba%8c%e8%bf%9b%e5%88%b6%e7%8e%a9%e5%87%ba%e8%8a%b1%e6%9d%a5%28%e8%a1%a8%e7%a4%ba%e5%92%8c%e8%bf%90%e7%ae%97%29" target="_blank" class="share-btn pinterest">
     <i class="fa fa-pinterest-p"></i>
     <p>Pinterest</p>
   </a>
@@ -509,7 +521,7 @@
 
 
 <li>
-  <a href="mailto:?subject=Check out this post by Dashjay&amp;body=%2fblog%2f6%2f" target="_blank" class="share-btn email">
+  <a href="mailto:?subject=Check out this post by Dashjay&amp;body=%2fblog%2fbin%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
   </a>
@@ -521,68 +533,46 @@
   
 
   
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/blog/6/" class="image featured">
-            <img src="/blog/2019-04-15-6_files/IMG_5774.JPG" alt="">
-        </a>
-    
-
 
   <div id="content">
-    <p>最近太忙了，之后再记录到底发生了什么吧，其实挺有意思的。</p>
+    
 
-<blockquote>
-<p>树莓派2b+ * 6(详细参数在下方)</p>
-</blockquote>
+<h2 id="二进制运算">二进制运算</h2>
+
+<p>要计算</p>
+
+<p>$$A = (0.1011)_2 \ B = (-0.0101)_2 $$
+求 A+B(使用补码)</p>
+
+<p>$$A_补 = 0.1011$$ ,$$B_补 = 1.1011$$</p>
 
 <table>
 <thead>
 <tr>
-<th>部件</th>
-<th>芯片</th>
+<th>加法</th>
+<th>0.1011</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>CPU主芯</td>
-<td>BCM2835 （ARM11）</td>
+<td>+</td>
+<td>1.1011</td>
 </tr>
 
 <tr>
-<td>内存</td>
-<td>512MB SDRAM @ 400MHz</td>
-</tr>
-
-<tr>
-<td>GPU</td>
-<td>Broadcom VideoCore IV</td>
-</tr>
-
-<tr>
-<td>网口</td>
-<td>10/100Mbps</td>
+<td>=</td>
+<td>10.0110</td>
 </tr>
 </tbody>
 </table>
+
+<p>其中结果 为 $$[A+B]_补$$
+并且要把符号位的进位去除表示为</p>
+
+<p>$$[A+B]_补 = 0.0110 = A_补 + B_补$$</p>
+
+<p>其中$$(0.0110)_补 = 0.0110$$</p>
 
   </div>
 
@@ -593,12 +583,6 @@
         
             
             
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4">运维</a></li>
-                
-            
         
     </ul>
   </li>
@@ -606,12 +590,6 @@
     <ul>
         
             
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">树莓派</a></li>
-                
             
         
     </ul>
@@ -648,13 +626,10 @@
 
 <ul class="actions pagination">
     
-        <li><a href="/blog/2015-07-23-r-rmarkdown/"
-                class="button big previous">Hello R Markdown</a></li>
+        <li><a href="/blog/verilog-oj/"
+                class="button big previous">一个项目的梳理Verilog_OJ</a></li>
     
 
-    
-        <li><a href="/blog/laravel-mongodb-docker/"
-                class="button big next">Laravel使用MongoDB纯Docker化部署</a></li>
     
 </ul>
 
