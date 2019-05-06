@@ -11,20 +11,17 @@
              "@id": "/"
         },
         "articleSection" : "blog",
-        "name" : "一个项目的梳理Verilog_OJ",
-        "headline" : "一个项目的梳理Verilog_OJ",
-        "description" : "1. 项目诞生 (2018 12 13) 何老师发了几个链接，然后我们就开始设计这个网站了
-https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.techep.csi.cuny.edu/~zhangs/v.html https://github.com/timyang2010/VerilogOnlineJudge  第一周的计划让我们激动 雪松学长的加入 开会的时候鲁一洋做的记录 需求文档0.2哦 需求文档下载链接 1-10开会整理 1-10开会整理 3-22我们创建并且使用了Teambition
-遇到了多伦多大学网站
-国防科技大学网站
-&hellip;我没有每天写日记的习惯，这次项目让我成长了不少，但是也让我感受到了心有余而力不足的感觉,项目开发和版本迭代并没有想象中的那么容易，那么干净利落，要准备的东西太多了。
- 我现在开始整理并且把制作这个项目的过程做成册来记录我的成长过程
- 1.项目初期开发使用PHP_Laravel一个简单干净的框架，当初为了把Vue嵌入进Laravel也花了不少时间那还是第一个版本（现在代码都不知道放在哪里了，非常难受）
-2.项目第二版本是当我准备去参加计算机设计大赛的时候，重新对整个项目重构，还是使用了PHP_Laravel + vue来实现，数据库我都没换，但是我换了一个前端框架，之前使用的Element-UI被我换成了额Iview，我自己感觉重构了一个版本，但是其实并没有实质内容的变化，只不过后台调用了Verilog而已。
-3.第三个版本是为了市赛准备的版本，数据库换成了额MongoDB，纯Docker化部署，PHP为核心，代码已经非常成熟了，然后使用Flask(python)给后台提供了便捷的评测API,只要文件储存的路径对了就可以了。
-4.第四个版本是未来的版本，推测这个项目只会有五个版本，那么作为第倒数第二个版本，基础逻辑（除了评测之外的逻辑）使用PHP开发，数据库使用MongoDB，然后在评测部分使用FLask来编程，整个项目Docker化部署。以上说的是OJ这边，除此之外，在线模板开发的这个项目可以搞起来。
- 根据老师的设想 案例：电梯： 状态机 -&gt; 代码编写 -&gt; 在线板级验证
- 总共网站要集成这几个功能，第一个是画状态机。 第二个是代码编写： 第三个上板验证还是一块蓝图： 5.版本不设计，只对代码进行逻辑的链接，（设想）。",
+        "name" : "DES算法学习记录",
+        "headline" : "DES算法学习记录",
+        "description" : "一、加密算法的分类 1.对称加解密算法  通信双方同时掌握一个密钥，加密解密都是由一个密钥完成的（即加密密钥等于解密密钥，加解密密钥可以相互推倒出来）。
+ 双方通信前共同拟定一个密钥，不对第三方公开。
+ 不具有个体原子性，一个密钥被共享，泄漏几率增大
+  2.公私钥加解密算法  通信双方掌握不同的密钥，不同方向的加解密由不同的密钥完成。  二、对称加密算法————DES加密  原理：该算法是一个利用56+8奇偶校验位（第8,16,24,32,40,48,56,64）=64位的密钥对以64位为单位的块数据进行加解密。
+ 假设明文如下： M（64位） = 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111
+L（32位） = 0000 0001 0010 0011 0100 0101 0110 0111
+R（32位） = 1000 1001 1010 1011 1100 1101 1110 1111
+有秘钥如下 即K（64位） = 00010011 00110100 01010111 01111001 10011011 10111100 11011111 11110001
+ 加粗的为奇偶校验位，实际秘钥56位",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -32,16 +29,16 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-04-26 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2019-04-26 00:00:00 &#43;0000 UTC",
-        "url" : "/blog/verilog-oj/",
-        "wordCount" : "39",
-        "keywords" : [ "全栈","Blog" ]
+        "datePublished": "2019-04-30 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2019-04-30 00:00:00 &#43;0000 UTC",
+        "url" : "/blog/des/",
+        "wordCount" : "191",
+        "keywords" : [ "Blog" ]
     }
     </script>
         
             
-                <title>一个项目的梳理Verilog_OJ</title>
+                <title>DES算法学习记录</title>
             
         
 
@@ -52,7 +49,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
         
-            <meta name="author" content="Dashjay">
+            <meta name="author" content="dashjay">
         
         
             
@@ -61,65 +58,56 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
         
 
         <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="一个项目的梳理Verilog_OJ"/>
-<meta name="twitter:description" content="1. 项目诞生 (2018 12 13) 何老师发了几个链接，然后我们就开始设计这个网站了
-https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.techep.csi.cuny.edu/~zhangs/v.html https://github.com/timyang2010/VerilogOnlineJudge  第一周的计划让我们激动 雪松学长的加入 开会的时候鲁一洋做的记录 需求文档0.2哦 需求文档下载链接 1-10开会整理 1-10开会整理 3-22我们创建并且使用了Teambition
-遇到了多伦多大学网站
-国防科技大学网站
-&hellip;我没有每天写日记的习惯，这次项目让我成长了不少，但是也让我感受到了心有余而力不足的感觉,项目开发和版本迭代并没有想象中的那么容易，那么干净利落，要准备的东西太多了。
- 我现在开始整理并且把制作这个项目的过程做成册来记录我的成长过程
- 1.项目初期开发使用PHP_Laravel一个简单干净的框架，当初为了把Vue嵌入进Laravel也花了不少时间那还是第一个版本（现在代码都不知道放在哪里了，非常难受）
-2.项目第二版本是当我准备去参加计算机设计大赛的时候，重新对整个项目重构，还是使用了PHP_Laravel &#43; vue来实现，数据库我都没换，但是我换了一个前端框架，之前使用的Element-UI被我换成了额Iview，我自己感觉重构了一个版本，但是其实并没有实质内容的变化，只不过后台调用了Verilog而已。
-3.第三个版本是为了市赛准备的版本，数据库换成了额MongoDB，纯Docker化部署，PHP为核心，代码已经非常成熟了，然后使用Flask(python)给后台提供了便捷的评测API,只要文件储存的路径对了就可以了。
-4.第四个版本是未来的版本，推测这个项目只会有五个版本，那么作为第倒数第二个版本，基础逻辑（除了评测之外的逻辑）使用PHP开发，数据库使用MongoDB，然后在评测部分使用FLask来编程，整个项目Docker化部署。以上说的是OJ这边，除此之外，在线模板开发的这个项目可以搞起来。
- 根据老师的设想 案例：电梯： 状态机 -&gt; 代码编写 -&gt; 在线板级验证
- 总共网站要集成这几个功能，第一个是画状态机。 第二个是代码编写： 第三个上板验证还是一块蓝图： 5.版本不设计，只对代码进行逻辑的链接，（设想）。"/>
+<meta name="twitter:title" content="DES算法学习记录"/>
+<meta name="twitter:description" content="一、加密算法的分类 1.对称加解密算法  通信双方同时掌握一个密钥，加密解密都是由一个密钥完成的（即加密密钥等于解密密钥，加解密密钥可以相互推倒出来）。
+ 双方通信前共同拟定一个密钥，不对第三方公开。
+ 不具有个体原子性，一个密钥被共享，泄漏几率增大
+  2.公私钥加解密算法  通信双方掌握不同的密钥，不同方向的加解密由不同的密钥完成。  二、对称加密算法————DES加密  原理：该算法是一个利用56&#43;8奇偶校验位（第8,16,24,32,40,48,56,64）=64位的密钥对以64位为单位的块数据进行加解密。
+ 假设明文如下： M（64位） = 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111
+L（32位） = 0000 0001 0010 0011 0100 0101 0110 0111
+R（32位） = 1000 1001 1010 1011 1100 1101 1110 1111
+有秘钥如下 即K（64位） = 00010011 00110100 01010111 01111001 10011011 10111100 11011111 11110001
+ 加粗的为奇偶校验位，实际秘钥56位"/>
 
-        <meta property="og:title" content="一个项目的梳理Verilog_OJ" />
-<meta property="og:description" content="1. 项目诞生 (2018 12 13) 何老师发了几个链接，然后我们就开始设计这个网站了
-https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.techep.csi.cuny.edu/~zhangs/v.html https://github.com/timyang2010/VerilogOnlineJudge  第一周的计划让我们激动 雪松学长的加入 开会的时候鲁一洋做的记录 需求文档0.2哦 需求文档下载链接 1-10开会整理 1-10开会整理 3-22我们创建并且使用了Teambition
-遇到了多伦多大学网站
-国防科技大学网站
-&hellip;我没有每天写日记的习惯，这次项目让我成长了不少，但是也让我感受到了心有余而力不足的感觉,项目开发和版本迭代并没有想象中的那么容易，那么干净利落，要准备的东西太多了。
- 我现在开始整理并且把制作这个项目的过程做成册来记录我的成长过程
- 1.项目初期开发使用PHP_Laravel一个简单干净的框架，当初为了把Vue嵌入进Laravel也花了不少时间那还是第一个版本（现在代码都不知道放在哪里了，非常难受）
-2.项目第二版本是当我准备去参加计算机设计大赛的时候，重新对整个项目重构，还是使用了PHP_Laravel &#43; vue来实现，数据库我都没换，但是我换了一个前端框架，之前使用的Element-UI被我换成了额Iview，我自己感觉重构了一个版本，但是其实并没有实质内容的变化，只不过后台调用了Verilog而已。
-3.第三个版本是为了市赛准备的版本，数据库换成了额MongoDB，纯Docker化部署，PHP为核心，代码已经非常成熟了，然后使用Flask(python)给后台提供了便捷的评测API,只要文件储存的路径对了就可以了。
-4.第四个版本是未来的版本，推测这个项目只会有五个版本，那么作为第倒数第二个版本，基础逻辑（除了评测之外的逻辑）使用PHP开发，数据库使用MongoDB，然后在评测部分使用FLask来编程，整个项目Docker化部署。以上说的是OJ这边，除此之外，在线模板开发的这个项目可以搞起来。
- 根据老师的设想 案例：电梯： 状态机 -&gt; 代码编写 -&gt; 在线板级验证
- 总共网站要集成这几个功能，第一个是画状态机。 第二个是代码编写： 第三个上板验证还是一块蓝图： 5.版本不设计，只对代码进行逻辑的链接，（设想）。" />
+        <meta property="og:title" content="DES算法学习记录" />
+<meta property="og:description" content="一、加密算法的分类 1.对称加解密算法  通信双方同时掌握一个密钥，加密解密都是由一个密钥完成的（即加密密钥等于解密密钥，加解密密钥可以相互推倒出来）。
+ 双方通信前共同拟定一个密钥，不对第三方公开。
+ 不具有个体原子性，一个密钥被共享，泄漏几率增大
+  2.公私钥加解密算法  通信双方掌握不同的密钥，不同方向的加解密由不同的密钥完成。  二、对称加密算法————DES加密  原理：该算法是一个利用56&#43;8奇偶校验位（第8,16,24,32,40,48,56,64）=64位的密钥对以64位为单位的块数据进行加解密。
+ 假设明文如下： M（64位） = 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111
+L（32位） = 0000 0001 0010 0011 0100 0101 0110 0111
+R（32位） = 1000 1001 1010 1011 1100 1101 1110 1111
+有秘钥如下 即K（64位） = 00010011 00110100 01010111 01111001 10011011 10111100 11011111 11110001
+ 加粗的为奇偶校验位，实际秘钥56位" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/verilog-oj/" />
-<meta property="article:published_time" content="2019-04-26T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-26T00:00:00&#43;00:00"/>
+<meta property="og:url" content="/blog/des/" />
+<meta property="article:published_time" content="2019-04-30T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-30T00:00:00&#43;00:00"/>
 
         <meta property="og:image" content="//images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
         
-<meta itemprop="name" content="一个项目的梳理Verilog_OJ">
-<meta itemprop="description" content="1. 项目诞生 (2018 12 13) 何老师发了几个链接，然后我们就开始设计这个网站了
-https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.techep.csi.cuny.edu/~zhangs/v.html https://github.com/timyang2010/VerilogOnlineJudge  第一周的计划让我们激动 雪松学长的加入 开会的时候鲁一洋做的记录 需求文档0.2哦 需求文档下载链接 1-10开会整理 1-10开会整理 3-22我们创建并且使用了Teambition
-遇到了多伦多大学网站
-国防科技大学网站
-&hellip;我没有每天写日记的习惯，这次项目让我成长了不少，但是也让我感受到了心有余而力不足的感觉,项目开发和版本迭代并没有想象中的那么容易，那么干净利落，要准备的东西太多了。
- 我现在开始整理并且把制作这个项目的过程做成册来记录我的成长过程
- 1.项目初期开发使用PHP_Laravel一个简单干净的框架，当初为了把Vue嵌入进Laravel也花了不少时间那还是第一个版本（现在代码都不知道放在哪里了，非常难受）
-2.项目第二版本是当我准备去参加计算机设计大赛的时候，重新对整个项目重构，还是使用了PHP_Laravel &#43; vue来实现，数据库我都没换，但是我换了一个前端框架，之前使用的Element-UI被我换成了额Iview，我自己感觉重构了一个版本，但是其实并没有实质内容的变化，只不过后台调用了Verilog而已。
-3.第三个版本是为了市赛准备的版本，数据库换成了额MongoDB，纯Docker化部署，PHP为核心，代码已经非常成熟了，然后使用Flask(python)给后台提供了便捷的评测API,只要文件储存的路径对了就可以了。
-4.第四个版本是未来的版本，推测这个项目只会有五个版本，那么作为第倒数第二个版本，基础逻辑（除了评测之外的逻辑）使用PHP开发，数据库使用MongoDB，然后在评测部分使用FLask来编程，整个项目Docker化部署。以上说的是OJ这边，除此之外，在线模板开发的这个项目可以搞起来。
- 根据老师的设想 案例：电梯： 状态机 -&gt; 代码编写 -&gt; 在线板级验证
- 总共网站要集成这几个功能，第一个是画状态机。 第二个是代码编写： 第三个上板验证还是一块蓝图： 5.版本不设计，只对代码进行逻辑的链接，（设想）。">
+<meta itemprop="name" content="DES算法学习记录">
+<meta itemprop="description" content="一、加密算法的分类 1.对称加解密算法  通信双方同时掌握一个密钥，加密解密都是由一个密钥完成的（即加密密钥等于解密密钥，加解密密钥可以相互推倒出来）。
+ 双方通信前共同拟定一个密钥，不对第三方公开。
+ 不具有个体原子性，一个密钥被共享，泄漏几率增大
+  2.公私钥加解密算法  通信双方掌握不同的密钥，不同方向的加解密由不同的密钥完成。  二、对称加密算法————DES加密  原理：该算法是一个利用56&#43;8奇偶校验位（第8,16,24,32,40,48,56,64）=64位的密钥对以64位为单位的块数据进行加解密。
+ 假设明文如下： M（64位） = 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111
+L（32位） = 0000 0001 0010 0011 0100 0101 0110 0111
+R（32位） = 1000 1001 1010 1011 1100 1101 1110 1111
+有秘钥如下 即K（64位） = 00010011 00110100 01010111 01111001 10011011 10111100 11011111 11110001
+ 加粗的为奇偶校验位，实际秘钥56位">
 
 
-<meta itemprop="datePublished" content="2019-04-26T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-04-26T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="39">
+<meta itemprop="datePublished" content="2019-04-30T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-04-30T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="191">
 
 
 
-<meta itemprop="keywords" content="全栈," />
+<meta itemprop="keywords" content="" />
 
         
 
@@ -380,7 +368,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="//twitter.com/share?url=%2fblog%2fverilog-oj%2f&amp;text=%e4%b8%80%e4%b8%aa%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%a2%b3%e7%90%86Verilog_OJ&amp;via=" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=%2fblog%2fdes%2f&amp;text=DES%e7%ae%97%e6%b3%95%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95&amp;via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -390,7 +378,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="//plus.google.com/share?url=%2fblog%2fverilog-oj%2f" target="_blank" class="share-btn google-plus">
+  <a href="//plus.google.com/share?url=%2fblog%2fdes%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
   </a>
@@ -401,7 +389,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fverilog-oj%2f" target="_blank" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fdes%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -411,7 +399,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="//reddit.com/submit?url=%2fblog%2fverilog-oj%2f&amp;title=%e4%b8%80%e4%b8%aa%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%a2%b3%e7%90%86Verilog_OJ" target="_blank" class="share-btn reddit">
+  <a href="//reddit.com/submit?url=%2fblog%2fdes%2f&amp;title=DES%e7%ae%97%e6%b3%95%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
   </a>
@@ -421,7 +409,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fverilog-oj%2f&amp;title=%e4%b8%80%e4%b8%aa%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%a2%b3%e7%90%86Verilog_OJ" target="_blank" class="share-btn linkedin">
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fdes%2f&amp;title=DES%e7%ae%97%e6%b3%95%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" target="_blank" class="share-btn linkedin">
       <i class="fa fa-linkedin"></i>
       <p>LinkedIn</p>
     </a>
@@ -431,7 +419,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fverilog-oj%2f&amp;title=%e4%b8%80%e4%b8%aa%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%a2%b3%e7%90%86Verilog_OJ" target="_blank" class="share-btn stumbleupon">
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fdes%2f&amp;title=DES%e7%ae%97%e6%b3%95%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
   </a>
@@ -441,7 +429,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fverilog-oj%2f&amp;description=%e4%b8%80%e4%b8%aa%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%a2%b3%e7%90%86Verilog_OJ" target="_blank" class="share-btn pinterest">
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fdes%2f&amp;description=DES%e7%ae%97%e6%b3%95%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" target="_blank" class="share-btn pinterest">
     <i class="fa fa-pinterest-p"></i>
     <p>Pinterest</p>
   </a>
@@ -451,7 +439,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="mailto:?subject=Check out this post by Dashjay&amp;body=%2fblog%2fverilog-oj%2f" target="_blank" class="share-btn email">
+  <a href="mailto:?subject=Check out this post by dashjay&amp;body=%2fblog%2fdes%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
   </a>
@@ -470,7 +458,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
   <header>
     <div class="title">
         
-            <h1><a href="/blog/verilog-oj/">一个项目的梳理Verilog_OJ</a></h1>
+            <h1><a href="/blog/des/">DES算法学习记录</a></h1>
             
         
         
@@ -479,9 +467,9 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
         
 
         <time class="published"
-            datetime='2019-04-26'>
-            April 26, 2019</time>
-        <span class="author">Dashjay</span>
+            datetime='2019-04-30'>
+            April 30, 2019</time>
+        <span class="author">dashjay</span>
         
             <p>1 minute read</p>
         
@@ -498,7 +486,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="//twitter.com/share?url=%2fblog%2fverilog-oj%2f&amp;text=%e4%b8%80%e4%b8%aa%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%a2%b3%e7%90%86Verilog_OJ&amp;via=" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=%2fblog%2fdes%2f&amp;text=DES%e7%ae%97%e6%b3%95%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95&amp;via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -508,7 +496,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="//plus.google.com/share?url=%2fblog%2fverilog-oj%2f" target="_blank" class="share-btn google-plus">
+  <a href="//plus.google.com/share?url=%2fblog%2fdes%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
   </a>
@@ -519,7 +507,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fverilog-oj%2f" target="_blank" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fdes%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -529,7 +517,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="//reddit.com/submit?url=%2fblog%2fverilog-oj%2f&amp;title=%e4%b8%80%e4%b8%aa%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%a2%b3%e7%90%86Verilog_OJ" target="_blank" class="share-btn reddit">
+  <a href="//reddit.com/submit?url=%2fblog%2fdes%2f&amp;title=DES%e7%ae%97%e6%b3%95%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
   </a>
@@ -539,7 +527,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fverilog-oj%2f&amp;title=%e4%b8%80%e4%b8%aa%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%a2%b3%e7%90%86Verilog_OJ" target="_blank" class="share-btn linkedin">
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fdes%2f&amp;title=DES%e7%ae%97%e6%b3%95%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" target="_blank" class="share-btn linkedin">
       <i class="fa fa-linkedin"></i>
       <p>LinkedIn</p>
     </a>
@@ -549,7 +537,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fverilog-oj%2f&amp;title=%e4%b8%80%e4%b8%aa%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%a2%b3%e7%90%86Verilog_OJ" target="_blank" class="share-btn stumbleupon">
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fdes%2f&amp;title=DES%e7%ae%97%e6%b3%95%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
   </a>
@@ -559,7 +547,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fverilog-oj%2f&amp;description=%e4%b8%80%e4%b8%aa%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%a2%b3%e7%90%86Verilog_OJ" target="_blank" class="share-btn pinterest">
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fdes%2f&amp;description=DES%e7%ae%97%e6%b3%95%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" target="_blank" class="share-btn pinterest">
     <i class="fa fa-pinterest-p"></i>
     <p>Pinterest</p>
   </a>
@@ -569,7 +557,7 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
 
 
 <li>
-  <a href="mailto:?subject=Check out this post by Dashjay&amp;body=%2fblog%2fverilog-oj%2f" target="_blank" class="share-btn email">
+  <a href="mailto:?subject=Check out this post by dashjay&amp;body=%2fblog%2fdes%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
   </a>
@@ -585,80 +573,178 @@ https://opencores.org/howto/eda https://www.edaplayground.com/x/B http://www.tec
   <div id="content">
     
 
-<h1 id="1-项目诞生-2018-12-13">1. 项目诞生 (2018 12 13)</h1>
+<h2 id="一-加密算法的分类">一、加密算法的分类</h2>
 
-<p>何老师发了几个链接，然后我们就开始设计这个网站了</p>
+<h3 id="1-对称加解密算法">1.对称加解密算法</h3>
 
-<pre><code>https://opencores.org/howto/eda
-https://www.edaplayground.com/x/B
-http://www.techep.csi.cuny.edu/~zhangs/v.html
-https://github.com/timyang2010/VerilogOnlineJudge
+<ul>
+<li><p>通信双方同时掌握一个密钥，加密解密都是由一个密钥完成的（即加密密钥等于解密密钥，加解密密钥可以相互推倒出来）。</p></li>
+
+<li><p>双方通信前共同拟定一个密钥，不对第三方公开。</p></li>
+
+<li><p>不具有个体原子性，一个密钥被共享，泄漏几率增大</p></li>
+</ul>
+
+<h3 id="2-公私钥加解密算法">2.公私钥加解密算法</h3>
+
+<ul>
+<li>通信双方掌握不同的密钥，不同方向的加解密由不同的密钥完成。</li>
+</ul>
+
+<h2 id="二-对称加密算法-des加密">二、对称加密算法————DES加密</h2>
+
+<blockquote>
+<p>原理：该算法是一个利用56+8奇偶校验位（第8,16,24,32,40,48,56,64）=64位的密钥对以64位为单位的块数据进行加解密。</p>
+</blockquote>
+
+<p>假设明文如下：
+M（64位） = 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111</p>
+
+<p>L（32位） = 0000 0001 0010 0011 0100 0101 0110 0111</p>
+
+<p>R（32位） = 1000 1001 1010 1011 1100 1101 1110 1111</p>
+
+<p>有秘钥如下
+即K（64位） = 0001001<strong>1</strong> 0011010<strong>0</strong> 0101011<strong>1</strong> 0111100<strong>1</strong> 1001101<strong>1</strong> 1011110<strong>0</strong> 1101111<strong>1</strong> 1111000<strong>1</strong></p>
+
+<blockquote>
+<p>加粗的为奇偶校验位，实际秘钥56位</p>
+</blockquote>
+
+<p>第一步：按照下表中的规则对各个位进行交换，生成16个子钥（48位）</p>
+
+<p>交换规则表</p>
+
+<table>
+<thead>
+<tr>
+<th>57</th>
+<th>49</th>
+<th>41</th>
+<th>33</th>
+<th>25</th>
+<th>17</th>
+<th>9</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>58</td>
+<td>50</td>
+<td>42</td>
+<td>34</td>
+<td>26</td>
+<td>18</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>2</td>
+<td>59</td>
+<td>51</td>
+<td>43</td>
+<td>35</td>
+<td>27</td>
+</tr>
+
+<tr>
+<td>19</td>
+<td>11</td>
+<td>3</td>
+<td>60</td>
+<td>52</td>
+<td>44</td>
+<td>36</td>
+</tr>
+
+<tr>
+<td>63</td>
+<td>55</td>
+<td>47</td>
+<td>39</td>
+<td>31</td>
+<td>23</td>
+<td>15</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>62</td>
+<td>54</td>
+<td>46</td>
+<td>38</td>
+<td>30</td>
+<td>22</td>
+</tr>
+
+<tr>
+<td>14</td>
+<td>6</td>
+<td>61</td>
+<td>53</td>
+<td>45</td>
+<td>37</td>
+<td>29</td>
+</tr>
+
+<tr>
+<td>21</td>
+<td>13</td>
+<td>5</td>
+<td>28</td>
+<td>20</td>
+<td>12</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+
+<p>交换方法：第一行第一列的数为57，那么就将K中第一位上的数换成K中第57位上的数（将0换为了57位上的1），依次类推。
+原K（64位） = 0001001<strong>1</strong> 0011010<strong>0</strong> 0101011<strong>1</strong> 0111100<strong>1</strong> 1001101<strong>1</strong> 1011110<strong>0</strong> 1101111<strong>1</strong> 1111000<strong>1</strong></p>
+
+<p>去掉奇偶校验位，再经过上表的转换就变为了：</p>
+
+<p>K + （56位） =  1111000  0110011  0010101  0101111  0101010   1011001    1001111  0001111</p>
+
+<p>因此：</p>
+
+<p>C0（28位） = 1111000  0110011  0010101  0101111</p>
+
+<p>D0（28位） = 0101010   1011001    1001111  0001111</p>
+
+<p>下来依次是C1,D1为C0,D0左移一位，C2,D2为C1,D1左移一位，C3,D3为C2,D2左移两位&hellip;&hellip;.</p>
+
+<p><img src="/blog/2019-04-30-des_files/20180413153502937" alt="" width="80%"/></p>
+
+<pre><code>所以，可以得到C1D1----C16D16的结果为：
+
+C1 = 1110000 1100110 01010101011111
+
+D1 = 1010101011001100111100011110
+
+C2 = 1100001100110010101010111111
+
+D2 = 0101010110011001111000111101
+
+C3 = 0000110011001010101011111111
+
+D3 = 0101011001100111100011110101
+
+................
+
+.................
+
+C15 = 1111100001100110010101010111
+
+D15 = 1010101010110011001111000111
+
+C16 = 1111000011001100101010101111
+
+D16 = 0101010101100101101110001111
+
 </code></pre>
-
-<h2 id="第一周的计划让我们激动">第一周的计划让我们激动</h2>
-
-<p><img src="/blog/2019-04-26-verilog-oj_files/1281556288571_.pic.jpg" alt="" width="99%"/></p>
-
-<h2 id="雪松学长的加入">雪松学长的加入</h2>
-
-<p><img src="/blog/2019-04-26-verilog-oj_files/IMG_1D122DC93211-1.jpeg" alt="" width="49%"/></p>
-
-<h2 id="开会的时候鲁一洋做的记录">开会的时候鲁一洋做的记录</h2>
-
-<p><img src="/blog/2019-04-26-verilog-oj_files/屏幕快照 2019-04-26 下午10.28.13.png" alt=" 鲁一洋做的会议记录" width="59%"/></p>
-
-<h2 id="需求文档0-2哦">需求文档0.2哦</h2>
-
-<p><a href="/blog/2019-04-26-verilog-oj_files/need0.2.docx">需求文档下载链接</a>
-<img src="/blog/2019-04-26-verilog-oj_files/屏幕快照 2019-04-26 下午10.33.26.png" alt="" width="99%"/></p>
-
-<h2 id="1-10开会整理">1-10开会整理</h2>
-
-<p><a href="/blog/2019-04-26-verilog-oj_files/meet1.10.docx">1-10开会整理</a>
-<img src="/blog/2019-04-26-verilog-oj_files/屏幕快照 2019-04-26 下午10.36.22.png" alt="" width="99%"/></p>
-
-<hr />
-
-<p>3-22我们创建并且使用了Teambition</p>
-
-<hr />
-
-<p>遇到了多伦多大学网站</p>
-
-<hr />
-
-<p>国防科技大学网站</p>
-
-<hr />
-
-<p>&hellip;我没有每天写日记的习惯，这次项目让我成长了不少，但是也让我感受到了心有余而力不足的感觉,项目开发和版本迭代并没有想象中的那么容易，那么干净利落，要准备的东西太多了。</p>
-
-<blockquote>
-<p>我现在开始整理并且把制作这个项目的过程做成册来记录我的成长过程</p>
-</blockquote>
-
-<p>1.项目初期开发使用PHP_Laravel一个简单干净的框架，当初为了把Vue嵌入进Laravel也花了不少时间那还是第一个版本（现在代码都不知道放在哪里了，非常难受）</p>
-
-<p>2.项目第二版本是当我准备去参加计算机设计大赛的时候，重新对整个项目重构，还是使用了PHP_Laravel + vue来实现，数据库我都没换，但是我换了一个前端框架，之前使用的Element-UI被我换成了额Iview，我自己感觉重构了一个版本，但是其实并没有实质内容的变化，只不过后台调用了Verilog而已。</p>
-
-<p>3.第三个版本是为了市赛准备的版本，数据库换成了额MongoDB，纯Docker化部署，PHP为核心，代码已经非常成熟了，然后使用Flask(python)给后台提供了便捷的评测API,只要文件储存的路径对了就可以了。</p>
-
-<p>4.第四个版本是未来的版本，推测这个项目只会有五个版本，那么作为第倒数第二个版本，基础逻辑（除了评测之外的逻辑）使用PHP开发，数据库使用MongoDB，然后在评测部分使用FLask来编程，整个项目Docker化部署。以上说的是OJ这边，除此之外，在线模板开发的这个项目可以搞起来。</p>
-
-<blockquote>
-<p>根据老师的设想 案例：电梯： 状态机 -&gt; 代码编写 -&gt; 在线板级验证</p>
-</blockquote>
-
-<p>总共网站要集成这几个功能，第一个是画状态机。
-<img src="/blog/2019-04-26-verilog-oj_files/3911556285971_.pic_hd.jpg" alt="" width="60%"/></p>
-
-<p>第二个是代码编写：
-<img src="/blog/2019-04-26-verilog-oj_files/4221556287465_.pic_hd.jpg" alt="" width="99%"/></p>
-
-<p>第三个上板验证还是一块蓝图：
-<img src="/blog/2019-04-26-verilog-oj_files/屏幕快照 2019-04-26 下午10.55.20.png" alt="" width="100%"/></p>
-
-<p>5.版本不设计，只对代码进行逻辑的链接，（设想）。</p>
 
   </div>
 
@@ -672,7 +758,7 @@ https://github.com/timyang2010/VerilogOnlineJudge
                 <i class="fa fa-folder"></i>
                 
                 
-                <li><a class="article-category-link" href="/categories/%E9%A1%B9%E7%9B%AE">项目</a></li>
+                <li><a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6">密码学</a></li>
                 
             
         
@@ -682,12 +768,6 @@ https://github.com/timyang2010/VerilogOnlineJudge
     <ul>
         
             
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/%E5%85%A8%E6%A0%88">全栈</a></li>
-                
             
         
     </ul>
@@ -724,13 +804,10 @@ https://github.com/timyang2010/VerilogOnlineJudge
 
 <ul class="actions pagination">
     
-        <li><a href="/blog/laravel-mongodb-docker/"
-                class="button big previous">Laravel使用MongoDB纯Docker化部署</a></li>
+        <li><a href="/blog/bin/"
+                class="button big previous">二进制玩出花来(表示和运算)</a></li>
     
 
-    
-        <li><a href="/blog/bin/"
-                class="button big next">二进制玩出花来(表示和运算)</a></li>
     
 </ul>
 

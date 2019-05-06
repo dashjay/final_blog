@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>密码学 on Dashjay&#39;s</title>
+    <link>/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/</link>
+    <description>Recent content in 密码学 on Dashjay&#39;s</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DES算法学习记录</title>
+      <link>/blog/des/</link>
+      <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/des/</guid>
+      <description>一、加密算法的分类 1.对称加解密算法  通信双方同时掌握一个密钥，加密解密都是由一个密钥完成的（即加密密钥等于解密密钥，加解密密钥可以相互推倒出来）。
+ 双方通信前共同拟定一个密钥，不对第三方公开。
+ 不具有个体原子性，一个密钥被共享，泄漏几率增大
+  2.公私钥加解密算法  通信双方掌握不同的密钥，不同方向的加解密由不同的密钥完成。  二、对称加密算法————DES加密  原理：该算法是一个利用56+8奇偶校验位（第8,16,24,32,40,48,56,64）=64位的密钥对以64位为单位的块数据进行加解密。
+ 假设明文如下： M（64位） = 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111
+L（32位） = 0000 0001 0010 0011 0100 0101 0110 0111
+R（32位） = 1000 1001 1010 1011 1100 1101 1110 1111
+有秘钥如下 即K（64位） = 00010011 00110100 01010111 01111001 10011011 10111100 11011111 11110001
+ 加粗的为奇偶校验位，实际秘钥56位</description>
+    </item>
+    
+  </channel>
+</rss>
