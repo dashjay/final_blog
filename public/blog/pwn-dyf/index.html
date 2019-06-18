@@ -10,10 +10,14 @@
              "@type": "WebPage",
              "@id": "/"
         },
-        "articleSection" : "",
-        "name" : "Dashjay&#39;s",
-        "headline" : "Dashjay&#39;s",
-        "description" : "",
+        "articleSection" : "blog",
+        "name" : "人生第一PWN感谢dyf的胖",
+        "headline" : "人生第一PWN感谢dyf的胖",
+        "description" : " 要搞Pwn首先还是要理解一下函数调用的机制，栈帧什么之类的那些神奇的东西 首先写了一个非常简单的程序 编译命令 gcc -o simple simple.c -m32
+ 使用32位编译是因为32位的汇编赋值的时候更容易理解 如果编译遇到问题可以安装 gcc-multilib来解决  sudo apt install gcc-multilib
+然后我们使用gdb调试，查看栈的信息
+gdb simple
+图1 从图一来看，main函数被调用的时候，首先上级函数把它的基指针（$ebp)推入寄栈中，然后将栈顶的内容放进$ebp作为当前调用函数的基指针（main) 下一条我们可以不用管，是给函数的创建开辟空间的 sub esp, 0x10 图2 从图二来看，绿色那条可能是系统使用我们不做分析，从0x565561b0开始首先将0x1和0x2分别赋值给两个寄存器里。 倒过来把两个数push进栈，传参进f，因为即将调用f。 图3 f被调用和main的流程相同，main的基指针被插入栈顶，然后把栈顶放进当前的基指针寄存中，并且执行了两条系统命令。 接下来同样把两个变量赋值进入edx，和eax 图4 图4中f执行了加指令，执行完之后程序的结果放在a当中，ret的时候返回。 图5 add命令是用来回收空间的，一开始开辟了0x10的空间，但是最后只释放了0x8的空间，并且返回零 图6 这是用radare2调试的结果，可以清楚的看到main函数功能，图7是f函数的汇编 图7 ",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -23,14 +27,14 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-06-19 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-06-19 00:00:00 &#43;0000 UTC",
-        "url" : "/",
-        "wordCount" : "0",
+        "url" : "/blog/pwn-dyf/",
+        "wordCount" : "37",
         "keywords" : [ "Blog" ]
     }
     </script>
         
             
-                <title>Dashjay&#39;s</title>
+                <title>人生第一PWN感谢dyf的胖</title>
             
         
 
@@ -41,6 +45,8 @@
 
 
         
+            <meta name="author" content="dashjay">
+        
         
             
                 <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
@@ -48,24 +54,44 @@
         
 
         <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Dashjay&#39;s"/>
-<meta name="twitter:description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"/>
+<meta name="twitter:title" content="人生第一PWN感谢dyf的胖"/>
+<meta name="twitter:description" content=" 要搞Pwn首先还是要理解一下函数调用的机制，栈帧什么之类的那些神奇的东西 首先写了一个非常简单的程序 编译命令 gcc -o simple simple.c -m32
+ 使用32位编译是因为32位的汇编赋值的时候更容易理解 如果编译遇到问题可以安装 gcc-multilib来解决  sudo apt install gcc-multilib
+然后我们使用gdb调试，查看栈的信息
+gdb simple
+图1 从图一来看，main函数被调用的时候，首先上级函数把它的基指针（$ebp)推入寄栈中，然后将栈顶的内容放进$ebp作为当前调用函数的基指针（main) 下一条我们可以不用管，是给函数的创建开辟空间的 sub esp, 0x10 图2 从图二来看，绿色那条可能是系统使用我们不做分析，从0x565561b0开始首先将0x1和0x2分别赋值给两个寄存器里。 倒过来把两个数push进栈，传参进f，因为即将调用f。 图3 f被调用和main的流程相同，main的基指针被插入栈顶，然后把栈顶放进当前的基指针寄存中，并且执行了两条系统命令。 接下来同样把两个变量赋值进入edx，和eax 图4 图4中f执行了加指令，执行完之后程序的结果放在a当中，ret的时候返回。 图5 add命令是用来回收空间的，一开始开辟了0x10的空间，但是最后只释放了0x8的空间，并且返回零 图6 这是用radare2调试的结果，可以清楚的看到main函数功能，图7是f函数的汇编 图7 "/>
 
-        <meta property="og:title" content="Dashjay&#39;s" />
-<meta property="og:description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
-
-<meta property="og:updated_time" content="2019-06-19T00:00:00&#43;00:00"/>
+        <meta property="og:title" content="人生第一PWN感谢dyf的胖" />
+<meta property="og:description" content=" 要搞Pwn首先还是要理解一下函数调用的机制，栈帧什么之类的那些神奇的东西 首先写了一个非常简单的程序 编译命令 gcc -o simple simple.c -m32
+ 使用32位编译是因为32位的汇编赋值的时候更容易理解 如果编译遇到问题可以安装 gcc-multilib来解决  sudo apt install gcc-multilib
+然后我们使用gdb调试，查看栈的信息
+gdb simple
+图1 从图一来看，main函数被调用的时候，首先上级函数把它的基指针（$ebp)推入寄栈中，然后将栈顶的内容放进$ebp作为当前调用函数的基指针（main) 下一条我们可以不用管，是给函数的创建开辟空间的 sub esp, 0x10 图2 从图二来看，绿色那条可能是系统使用我们不做分析，从0x565561b0开始首先将0x1和0x2分别赋值给两个寄存器里。 倒过来把两个数push进栈，传参进f，因为即将调用f。 图3 f被调用和main的流程相同，main的基指针被插入栈顶，然后把栈顶放进当前的基指针寄存中，并且执行了两条系统命令。 接下来同样把两个变量赋值进入edx，和eax 图4 图4中f执行了加指令，执行完之后程序的结果放在a当中，ret的时候返回。 图5 add命令是用来回收空间的，一开始开辟了0x10的空间，但是最后只释放了0x8的空间，并且返回零 图6 这是用radare2调试的结果，可以清楚的看到main函数功能，图7是f函数的汇编 图7 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/pwn-dyf/" />
+<meta property="article:published_time" content="2019-06-19T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-06-19T00:00:00&#43;00:00"/>
 
         <meta property="og:image" content="//images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
         
-<meta itemprop="name" content="Dashjay&#39;s">
-<meta itemprop="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
+<meta itemprop="name" content="人生第一PWN感谢dyf的胖">
+<meta itemprop="description" content=" 要搞Pwn首先还是要理解一下函数调用的机制，栈帧什么之类的那些神奇的东西 首先写了一个非常简单的程序 编译命令 gcc -o simple simple.c -m32
+ 使用32位编译是因为32位的汇编赋值的时候更容易理解 如果编译遇到问题可以安装 gcc-multilib来解决  sudo apt install gcc-multilib
+然后我们使用gdb调试，查看栈的信息
+gdb simple
+图1 从图一来看，main函数被调用的时候，首先上级函数把它的基指针（$ebp)推入寄栈中，然后将栈顶的内容放进$ebp作为当前调用函数的基指针（main) 下一条我们可以不用管，是给函数的创建开辟空间的 sub esp, 0x10 图2 从图二来看，绿色那条可能是系统使用我们不做分析，从0x565561b0开始首先将0x1和0x2分别赋值给两个寄存器里。 倒过来把两个数push进栈，传参进f，因为即将调用f。 图3 f被调用和main的流程相同，main的基指针被插入栈顶，然后把栈顶放进当前的基指针寄存中，并且执行了两条系统命令。 接下来同样把两个变量赋值进入edx，和eax 图4 图4中f执行了加指令，执行完之后程序的结果放在a当中，ret的时候返回。 图5 add命令是用来回收空间的，一开始开辟了0x10的空间，但是最后只释放了0x8的空间，并且返回零 图6 这是用radare2调试的结果，可以清楚的看到main函数功能，图7是f函数的汇编 图7 ">
 
+
+<meta itemprop="datePublished" content="2019-06-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-06-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="37">
+
+
+
+<meta itemprop="keywords" content="" />
 
         
 
@@ -108,7 +134,7 @@
     
 <header id="header">
     
-      <h1><a href="/">Future Imperfect</a></h1>
+      <h1><a href="/">blog</a></h1>
     
 
     <nav class="links">
@@ -291,14 +317,109 @@
         
 </section>
 
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2fpwn-dyf%2f&amp;text=%e4%ba%ba%e7%94%9f%e7%ac%ac%e4%b8%80PWN%e6%84%9f%e8%b0%a2dyf%e7%9a%84%e8%83%96&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2fpwn-dyf%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fpwn-dyf%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2fpwn-dyf%2f&amp;title=%e4%ba%ba%e7%94%9f%e7%ac%ac%e4%b8%80PWN%e6%84%9f%e8%b0%a2dyf%e7%9a%84%e8%83%96" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fpwn-dyf%2f&amp;title=%e4%ba%ba%e7%94%9f%e7%ac%ac%e4%b8%80PWN%e6%84%9f%e8%b0%a2dyf%e7%9a%84%e8%83%96" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fpwn-dyf%2f&amp;title=%e4%ba%ba%e7%94%9f%e7%ac%ac%e4%b8%80PWN%e6%84%9f%e8%b0%a2dyf%e7%9a%84%e8%83%96" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fpwn-dyf%2f&amp;description=%e4%ba%ba%e7%94%9f%e7%ac%ac%e4%b8%80PWN%e6%84%9f%e8%b0%a2dyf%e7%9a%84%e8%83%96" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by dashjay&amp;body=%2fblog%2fpwn-dyf%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
     
     <div id="main">
         
-            <article class="post">
+        
+        <article class="post">
   <header>
     <div class="title">
         
-            <h2><a href="/blog/pwn-dyf/">人生第一PWN感谢dyf的胖</a></h2>
+            <h1><a href="/blog/pwn-dyf/">人生第一PWN感谢dyf的胖</a></h1>
+            
         
         
     </div>
@@ -528,101 +649,6 @@
 </ul>
 
 
-
-            <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
-            </header>
-            
-
-
-
-<li>
-  <a href="//twitter.com/share?url=%2fblog%2fpwn-dyf%2f&amp;text=%e4%ba%ba%e7%94%9f%e7%ac%ac%e4%b8%80PWN%e6%84%9f%e8%b0%a2dyf%e7%9a%84%e8%83%96&amp;via=" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//plus.google.com/share?url=%2fblog%2fpwn-dyf%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-  </a>
-</li>
-
-
-
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fpwn-dyf%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//reddit.com/submit?url=%2fblog%2fpwn-dyf%2f&amp;title=%e4%ba%ba%e7%94%9f%e7%ac%ac%e4%b8%80PWN%e6%84%9f%e8%b0%a2dyf%e7%9a%84%e8%83%96" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fpwn-dyf%2f&amp;title=%e4%ba%ba%e7%94%9f%e7%ac%ac%e4%b8%80PWN%e6%84%9f%e8%b0%a2dyf%e7%9a%84%e8%83%96" target="_blank" class="share-btn linkedin">
-      <i class="fa fa-linkedin"></i>
-      <p>LinkedIn</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fpwn-dyf%2f&amp;title=%e4%ba%ba%e7%94%9f%e7%ac%ac%e4%b8%80PWN%e6%84%9f%e8%b0%a2dyf%e7%9a%84%e8%83%96" target="_blank" class="share-btn stumbleupon">
-    <i class="fa fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fpwn-dyf%2f&amp;description=%e4%ba%ba%e7%94%9f%e7%ac%ac%e4%b8%80PWN%e6%84%9f%e8%b0%a2dyf%e7%9a%84%e8%83%96" target="_blank" class="share-btn pinterest">
-    <i class="fa fa-pinterest-p"></i>
-    <p>Pinterest</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="mailto:?subject=Check out this post by dashjay&amp;body=%2fblog%2fpwn-dyf%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
-    <p>Email</p>
-  </a>
-</li>
-
-
-        </ul>
-    </section>
-</section>
-
-        
     </div>
     
 <section id="sidebar">

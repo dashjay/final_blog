@@ -6,10 +6,23 @@
     <description>Recent content in Blog on Dashjay&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>人生第一PWN感谢dyf的胖</title>
+      <link>/blog/pwn-dyf/</link>
+      <pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/pwn-dyf/</guid>
+      <description> 要搞Pwn首先还是要理解一下函数调用的机制，栈帧什么之类的那些神奇的东西 首先写了一个非常简单的程序 编译命令 gcc -o simple simple.c -m32
+ 使用32位编译是因为32位的汇编赋值的时候更容易理解 如果编译遇到问题可以安装 gcc-multilib来解决  sudo apt install gcc-multilib
+然后我们使用gdb调试，查看栈的信息
+gdb simple
+图1 从图一来看，main函数被调用的时候，首先上级函数把它的基指针（$ebp)推入寄栈中，然后将栈顶的内容放进$ebp作为当前调用函数的基指针（main) 下一条我们可以不用管，是给函数的创建开辟空间的 sub esp, 0x10 图2 从图二来看，绿色那条可能是系统使用我们不做分析，从0x565561b0开始首先将0x1和0x2分别赋值给两个寄存器里。 倒过来把两个数push进栈，传参进f，因为即将调用f。 图3 f被调用和main的流程相同，main的基指针被插入栈顶，然后把栈顶放进当前的基指针寄存中，并且执行了两条系统命令。 接下来同样把两个变量赋值进入edx，和eax 图4 图4中f执行了加指令，执行完之后程序的结果放在a当中，ret的时候返回。 图5 add命令是用来回收空间的，一开始开辟了0x10的空间，但是最后只释放了0x8的空间，并且返回零 图6 这是用radare2调试的结果，可以清楚的看到main函数功能，图7是f函数的汇编 图7 </description>
+    </item>
     
     <item>
       <title>计算程序运行时间</title>
