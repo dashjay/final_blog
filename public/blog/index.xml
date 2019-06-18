@@ -6,10 +6,23 @@
     <description>Recent content in Blog on Dashjay&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>计算程序运行时间</title>
+      <link>/blog/2019-06-18-/</link>
+      <pubDate>Tue, 18 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019-06-18-/</guid>
+      <description>今天 老师群里让我帮忙测一下程序运行时间，是一个Verilog程序，Verilog本身是没办法测运行时间的，我们只能用C++或者C写一个程序来运行
+ 好的，我一开始只知道使用popen来运行程序，这是一种创建子进程的方式，一下子我电脑都崩溃了，因为老师要运行一千次求平均数 一开始程序是这样写的
+1.popen 版本
+ popen 可以执行shell命令并且，读取该命令的返回值：
+  popen()函数通过创建一个管道，调用fork()产生一个子进程，执行一个shell以运行命令开启一个进程，可以通过这个管道执行标准输出输入操作 。 使用注意事项时：这个管道必须用pclose()关闭，否则会产生僵尸进程（没有母进程的进程）。pclose(来关闭标准I\O流)，等待命令执行结束然后返回shell的终止状态，如果shell不能被执行，则pclose()返回的终止状态与已执行exit的一样  函数原型在此 FILE *popen(const char *command, const char *type); int pclose(FILE *stream);   type 参数  只能是度或者写的一种，得到的返回值（标准I\O流）也具有和type相应的制度或者只写类型。 如果type是r则文件指针连接到标准输出 如果是w则连接到标准输入  command 参数  是一个以NULL结束的shell命令字符串指针。这行命令将被传到/bin/sh并使用-c命令执行。  返回值  如果调用fork()和pipe()失败，或者不能分配内存将返回NULL，否则返回标准输出。 popen()没有为内存分配失败设置error值 如果调用fork()或pipe()时出现错误，errno被设为相应的错误类型。 如果type参数不合法，errno将返回EINVAL。   #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #include &amp;lt;unistd.h&amp;gt; #include &amp;lt;string.h&amp;gt; void print_result(FILE *fp) { char buf[100]; if(!fp) { return; } printf(&amp;quot;\n&amp;gt;&amp;gt;&amp;gt;\n&amp;quot;); while(memset(buf, 0, sizeof(buf)), fgets(buf, sizeof(buf) - 1, fp) !</description>
+    </item>
     
     <item>
       <title>DES算法学习记录</title>
