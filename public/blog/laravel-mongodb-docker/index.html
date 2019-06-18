@@ -8,18 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "/"
+             "@id": "\/"
         },
         "articleSection" : "blog",
         "name" : "Laravel使用MongoDB纯Docker化部署",
         "headline" : "Laravel使用MongoDB纯Docker化部署",
-        "description" : "使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。
- 在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  首先拉到一个非常好的Docker，已经配置的非常好了~可以直接使用那种！&ndash;&gt;webdevops/php-nginx
-$docker pull webdevops/php-nginx $docker run -d -p 32778:80 -p 32777:443 -p 32776:9000 webdevops/php-nginx supervisord  不出意外此时你访问localhost:32778的时候可以看到nginx404了，那是因为网页没有index 这时候你运行docker ps -a 检查一下刚才运行的docker的名字
-$docker ps -a CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES a969d60ac6ea webdevops/php-nginx &quot;/entrypoint supervi…&quot; 8 minutes ago Up 8 minutes 0.0.0.0:32778-&gt;80/tcp, 0.0.0.0:32777-&gt;443/tcp, 0.0.0.0:32776-&gt;9000/tcp fervent_hofstadter  其中docker的id是这个a969d60ac6ea
-然后使用docker exec来执行命令进入docker
-docker exec -it a969d60ac6ea bash  我们既不会影响原来的程序supervisord的运行，还能进入现有docker
-$ls 1 bin boot dev etc home lib lib64 media mnt opt proc root run sbin srv sys tmp usr var  查看一下有哪些目录，整个目录是映射在app里的，所以我们进入app",
+        "description" : "使用场景：学校，OJ，使用的本不会太懂，尽量傻瓜式部署。\n 在PHP下使用Laravel必须安装MongoDB插件，然后MongoDB-Server必须运行，这次为了方便软件使用，我使用了纯Docker部署，也是为了方便拓展。  首先拉到一个非常好的Docker，已经配置的非常好了~可以直接使用那种！\x26ndash;\x26gt;webdevops\/php-nginx\n$docker pull webdevops\/php-nginx $docker run -d -p 32778:80 -p 32777:443 -p 32776:9000 webdevops\/php-nginx supervisord  不出意外此时你访问localhost:32778的时候可以看到nginx404了，那是因为网页没有index 这时候你运行docker ps -a 检查一下刚才运行的docker的名字\n$docker ps -a CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES a969d60ac6ea webdevops\/php-nginx \x26quot;\/entrypoint supervi…\x26quot; 8 minutes ago Up 8 minutes 0.0.0.0:32778-\x26gt;80\/tcp, 0.0.0.0:32777-\x26gt;443\/tcp, 0.0.0.0:32776-\x26gt;9000\/tcp fervent_hofstadter  其中docker的id是这个a969d60ac6ea\n然后使用docker exec来执行命令进入docker\ndocker exec -it a969d60ac6ea bash  我们既不会影响原来的程序supervisord的运行，还能进入现有docker\n$ls 1 bin boot dev etc home lib lib64 media mnt opt proc root run sbin srv sys tmp usr var  查看一下有哪些目录，整个目录是映射在app里的，所以我们进入app",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -27,9 +21,9 @@ $ls 1 bin boot dev etc home lib lib64 media mnt opt proc root run sbin srv sys t
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-04-23 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2019-04-23 00:00:00 &#43;0000 UTC",
-        "url" : "/blog/laravel-mongodb-docker/",
+        "datePublished": "2019-04-23 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2019-04-23 00:00:00 \x2b0000 UTC",
+        "url" : "\/blog\/laravel-mongodb-docker\/",
         "wordCount" : "91",
         "keywords" : [ "tutorial","Blog" ]
     }
@@ -42,7 +36,7 @@ $ls 1 bin boot dev etc home lib lib64 media mnt opt proc root run sbin srv sys t
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.54.0" />
+        <meta name="generator" content="Hugo 0.55.6" />
         
 
 
@@ -946,7 +940,7 @@ phpinfo()
           <article>
             <header>
               
-                <a href="/categories/hugo/">Hugo</a>
+                <a href="/categories/hugo/">hugo</a>
                 <span style="float:right;">3</span>
               
             </header>
@@ -968,7 +962,7 @@ phpinfo()
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="/categories/docker/">docker</a>
                 <span style="float:right;">1</span>
               
             </header>
@@ -979,7 +973,7 @@ phpinfo()
           <article>
             <header>
               
-                <a href="/categories/go/">Go</a>
+                <a href="/categories/go/">go</a>
                 <span style="float:right;">1</span>
               
             </header>
@@ -990,7 +984,7 @@ phpinfo()
           <article>
             <header>
               
-                <a href="/categories/jekyll/">Jekyll</a>
+                <a href="/categories/jekyll/">jekyll</a>
                 <span style="float:right;">1</span>
               
             </header>
@@ -1001,7 +995,7 @@ phpinfo()
           <article>
             <header>
               
-                <a href="/categories/r/">R</a>
+                <a href="/categories/r/">r</a>
                 <span style="float:right;">1</span>
               
             </header>
